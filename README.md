@@ -2,7 +2,7 @@
 
 Proyecto del curso **Fundamentos de .NET** - Platzi
 
-## Módulo 2: Entradas, Salidas y Tipos
+## Módulo 4: Colecciones y LINQ
 
 ### Requisitos
 - .NET 9 SDK
@@ -10,15 +10,7 @@ Proyecto del curso **Fundamentos de .NET** - Platzi
 ### Cómo ejecutar
 ```bash
 dotnet run
-dotnet run --help
-dotnet run --version
 ```
-
-### Comandos interactivos
-- `listar` - Lista productos del inventario
-- `agregar` - Agrega un nuevo producto (Módulo 3)
-- `buscar` - Busca productos (Módulo 4)
-- `salir` - Sale del programa
 
 ### Estructura del Proyecto
 ```
@@ -28,15 +20,43 @@ InventarioApp/
 ├── .gitignore
 ├── README.md
 └── src/
-    └── Models/
-        └── .gitkeep
+    ├── Models/
+    │   ├── CategoriaProducto.cs
+    │   ├── EstadoProducto.cs
+    │   ├── Producto.cs
+    │   └── Proveedor.cs
+    ├── Factories/
+    │   └── ProductoFactory.cs
+    └── Repositories/
+        ├── IProductoRepository.cs
+        └── InMemoryProductoRepository.cs
 ```
+
+### Conceptos del Módulo
+- Patrón Repository (abstracción de datos)
+- Interfaces para contratos
+- LINQ básico: Where, Select, FirstOrDefault
+- LINQ avanzado: GroupBy, OrderBy, Sum, Average
+- Dictionary para acceso O(1)
+
+### LINQ Destacado
+
+| Método | Propósito |
+|--------|-----------|
+| `Where` | Filtrar elementos |
+| `Select` | Transformar/proyectar |
+| `OrderBy` | Ordenar |
+| `GroupBy` | Agrupar |
+| `Sum` | Sumar valores |
+| `Average` | Calcular promedio |
+| `FirstOrDefault` | Obtener primero o null |
+| `Any` | ¿Existe alguno? |
 
 ### Checklist de Progreso
 - [x] Módulo 1: El Ecosistema .NET
 - [x] Módulo 2: Entradas, Salidas y Tipos
-- [ ] Módulo 3: Funciones y Modelado de Dominio
-- [ ] Módulo 4: Colecciones y LINQ
+- [x] Módulo 3: Funciones y Modelado de Dominio
+- [x] Módulo 4: Colecciones y LINQ
 - [ ] Módulo 5: Archivos y Procesamiento
 
 ### Autor

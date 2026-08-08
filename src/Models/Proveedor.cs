@@ -1,4 +1,4 @@
-namespace InventarioApp.Models;
+namespace Inventario.Models;
 
 /// Representa un proveedor (record - inmutable por defecto).
 /// Ejemplo de cuándo usar record vs class.
