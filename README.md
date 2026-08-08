@@ -40,4 +40,4 @@ InventarioApp/
 - [ ] Módulo 5: Archivos y Procesamiento
 
 ### Autor
-Sebastian Martinez
+Daniel Martinez
