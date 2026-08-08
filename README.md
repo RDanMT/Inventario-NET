@@ -1,4 +1,4 @@
-#Sis# Sistema de Gestion de Inventario
+# Sistema de Gestion de Inventario
 
 Proyecto del curso **Fundamentos de .NET** 
 
