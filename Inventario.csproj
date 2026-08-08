@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  
+
+  <AssemblyInfo>
+    <AssemblyCompany>Inventario</AssemblyCompany>
+    <RootNamespace>Inventario</RootNamespace>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <Description>Proyecto de inventario</Description>
+  </AssemblyInfo>
+
+</PropertyGroup>
+
+</Project>
