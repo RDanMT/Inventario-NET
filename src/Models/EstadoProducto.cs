@@ -1,14 +1,16 @@
 namespace Inventario.Models;
 
-// Estado del producto en el inventario.
+/// <summary>
+/// Estado del producto en el inventario.
+/// </summary>
 public enum EstadoProducto
 {
-    //Producto disponible para venta.
+    /// <summary>Producto disponible para venta.</summary>
     Activo,
     
-    //Producto temporalmente no disponible.
+    /// <summary>Producto temporalmente no disponible.</summary>
     Inactivo,
     
-    //Producto que ya no se vende.
+    /// <summary>Producto que ya no se vende.</summary>
     Descontinuado
 }

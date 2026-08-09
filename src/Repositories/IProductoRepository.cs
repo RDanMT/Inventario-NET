@@ -2,26 +2,27 @@ namespace Inventario.Repositories;
 
 using Inventario.Models;
 
-// Contrato para el repositorio de productos.
-// Define las operaciones básicas de almacenamiento.
-
+/// <summary>
+/// Contrato para el repositorio de productos.
+/// Define las operaciones básicas de almacenamiento.
+/// </summary>
 public interface IProductoRepository
 {
-    // Agrega un producto al repositorio.
+    /// <summary>Agrega un producto al repositorio.</summary>
     void Agregar(Producto producto);
 
-    // Obtiene un producto por su ID.
+    /// <summary>Obtiene un producto por su ID.</summary>
     Producto? ObtenerPorId(int id);
 
-    // Obtiene todos los productos.
+    /// <summary>Obtiene todos los productos.</summary>
     IEnumerable<Producto> ObtenerTodos();
 
-    // Actualiza un producto existente.
+    /// <summary>Actualiza un producto existente.</summary>
     bool Actualizar(Producto producto);
 
-    // Elimina un producto por su ID.
+    /// <summary>Elimina un producto por su ID.</summary>
     bool Eliminar(int id);
 
-    // Cantidad total de productos.
+    /// <summary>Cantidad total de productos.</summary>
     int Cantidad { get; }
 }

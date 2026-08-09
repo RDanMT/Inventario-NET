@@ -1,9 +1,9 @@
 namespace Inventario.Models;
 
-// Representa un producto en el inventario.
-// Incluye validación en setters (guard clauses).
-
-// sIRve para representar un producto en el inventario, incluyendo su nombre, precio, cantidad, categoría, estado y fecha de registro. Además, proporciona validación en los setters para garantizar que los valores sean válidos.
+/// <summary>
+/// Representa un producto en el inventario.
+/// Incluye validación en setters (guard clauses).
+/// </summary>
 public class Producto
 {
     private string _nombre = "";
@@ -12,31 +12,28 @@ public class Producto
 
     public int Id { get; set; }
 
-    // Nombre del producto.
     public string Nombre
     {
         get => _nombre;
         set
         {
-            if (string.IsNullOrWhiteSpace(value)) // Validación: el nombre no puede estar vacío o ser solo espacios en blanco.
-                throw new ArgumentException("El nombre no puede estar vacío."); // Guard clause para validar que el nombre no esté vacío.
-            _nombre = value; // Asignación del valor al campo privado _nombre.
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ArgumentException("El nombre no puede estar vacío.");
+            _nombre = value;
         }
     }
 
-// Precio del producto.
     public decimal Precio
     {
-        get => _precio; // Getter para obtener el precio del producto.
-        set             // Setter para establecer el precio del producto.
+        get => _precio;
+        set
         {
-            if (value < 0)                                                      // Validación: el precio no puede ser negativo.
-                throw new ArgumentException("El precio no puede ser negativo.");// Guard clause para validar que el precio no sea negativo.
-            _precio = value;                                                    // Asignación del valor al campo privado _precio.
+            if (value < 0)
+                throw new ArgumentException("El precio no puede ser negativo.");
+            _precio = value;
         }
     }
-    
-// Cantidad del producto en inventario.
+
     public int Cantidad
     {
         get => _cantidad;
@@ -52,8 +49,8 @@ public class Producto
     public EstadoProducto Estado { get; set; } = EstadoProducto.Activo;
     public DateTime FechaRegistro { get; set; } = DateTime.Now;
 
- 
- // Propiedad calculada: Precio × Cantidad
-    
+    /// <summary>
+    /// Propiedad calculada: Precio × Cantidad
+    /// </summary>
     public decimal ValorTotal => Precio * Cantidad;
 }

@@ -2,9 +2,11 @@ namespace Inventario.Repositories;
 
 using Inventario.Models;
 
-// Implementación en memoria del repositorio de productos.
-// Usa Dictionary para acceso O(1) por ID.
-// Incluye métodos LINQ para búsquedas y agregaciones.
+/// <summary>
+/// Implementación en memoria del repositorio de productos.
+/// Usa Dictionary para acceso O(1) por ID.
+/// Incluye métodos LINQ para búsquedas y agregaciones.
+/// </summary>
 public class InMemoryProductoRepository : IProductoRepository
 {
     private readonly Dictionary<int, Producto> _productos = new();

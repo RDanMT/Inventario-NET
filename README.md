@@ -2,7 +2,7 @@
 
 Proyecto del curso **Fundamentos de .NET** - Platzi
 
-## Módulo 4: Colecciones y LINQ
+## Módulo 5: Archivos y Procesamiento (VERSIÓN FINAL)
 
 ### Requisitos
 - .NET 9 SDK
@@ -12,7 +12,11 @@ Proyecto del curso **Fundamentos de .NET** - Platzi
 dotnet run
 ```
 
-### Estructura del Proyecto
+### Archivos generados
+- `inventario.json` - Base de datos (persistencia automática)
+- `inventario_backup_*.json` - Backups automáticos
+
+### Estructura del Proyecto (Final)
 ```
 InventarioApp/
 ├── Program.cs
@@ -27,37 +31,58 @@ InventarioApp/
     │   └── Proveedor.cs
     ├── Factories/
     │   └── ProductoFactory.cs
-    └── Repositories/
-        ├── IProductoRepository.cs
-        └── InMemoryProductoRepository.cs
+    ├── Repositories/
+    │   ├── IProductoRepository.cs
+    │   └── InMemoryProductoRepository.cs
+    ├── Services/
+    │   └── InventarioService.cs
+    └── Infrastructure/
+        ├── FileManager.cs
+        ├── JsonInventarioStorage.cs
+        └── GeneradorReportes.cs
 ```
 
-### Conceptos del Módulo
-- Patrón Repository (abstracción de datos)
-- Interfaces para contratos
-- LINQ básico: Where, Select, FirstOrDefault
-- LINQ avanzado: GroupBy, OrderBy, Sum, Average
-- Dictionary para acceso O(1)
+### Arquitectura
 
-### LINQ Destacado
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        Program.cs                               │
+│                      (UI de Consola)                            │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+┌───────────────────────────▼─────────────────────────────────────┐
+│                   InventarioService                             │
+│              (Orquestación + Persistencia)                      │
+└──────┬──────────────────┬───────────────────┬───────────────────┘
+       │                  │                   │
+┌──────▼──────┐   ┌───────▼───────┐   ┌───────▼───────┐
+│ Repository  │   │    Factory    │   │Infrastructure │
+│ (Memoria)   │   │  (Creación)   │   │   (I/O)       │
+└─────────────┘   └───────────────┘   └───────────────┘
+```
 
-| Método | Propósito |
-|--------|-----------|
-| `Where` | Filtrar elementos |
-| `Select` | Transformar/proyectar |
-| `OrderBy` | Ordenar |
-| `GroupBy` | Agrupar |
-| `Sum` | Sumar valores |
-| `Average` | Calcular promedio |
-| `FirstOrDefault` | Obtener primero o null |
-| `Any` | ¿Existe alguno? |
+### Conceptos del Módulo 5
+- FileManager: abstracción de operaciones de archivo
+- JsonInventarioStorage: serialización/deserialización JSON
+- GeneradorReportes: reportes con StringBuilder y LINQ
+- InventarioService: patrón Facade con persistencia automática
+- System.Text.Json: serializador nativo de .NET
 
 ### Checklist de Progreso
 - [x] Módulo 1: El Ecosistema .NET
 - [x] Módulo 2: Entradas, Salidas y Tipos
 - [x] Módulo 3: Funciones y Modelado de Dominio
 - [x] Módulo 4: Colecciones y LINQ
-- [ ] Módulo 5: Archivos y Procesamiento
+- [x] Módulo 5: Archivos y Procesamiento
+
+---
+
+## 🎓 CURSO COMPLETADO
+
+Este proyecto demuestra comprensión estructural de .NET:
+- Decisiones de diseño justificadas (class vs record, List vs Dictionary)
+- Patrones aplicados donde agregan valor (Repository, Factory, Facade)
+- Código mantenible y extensible
 
 ### Autor
 Daniel Martinez
